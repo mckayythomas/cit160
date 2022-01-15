@@ -7,15 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Registration</title>
     <link rel="stylesheet" href="css/vehicle registratin.css">
-    <script defer>
+    <script>
         function getTotalDue() {
-            debugger;
-            console.log("here")
             const totalAmountDue = 100;
+            const rDiscount = document.getElementById('rDiscount').value;
             let totalDue = 0;
             totalDue = totalAmountDue - rDiscount;
-            const rDiscount = document.getElementById('rDiscount').value;
-            document.getElementById("totalDue").innerHTML = `Total: ${totalAmountDue} Amount Due`;
+            document.getElementById("totalDue").innerHTML = `Total: $${totalDue} Amount Due`;
         }
     </script>
 </head>
@@ -40,9 +38,9 @@
         <label for="rDiscount">Registration Discount:</label>
         <input type="number" id="rDiscount" name="rDiscount">
 
-        <div class="processing"><button onclick="getTotalDue()">Compute Total</button>
+        <div class="processing" type="button"><button onclick="getTotalDue ()">Compute Total</button>
             <hr>
-            <p id="totalAmountDue"></p>
+            <p id="totalDue"></p>
         </div>
     </main>
     <footer>©2022 .:|:. McKay Thomas .:|:. CIT 160 at BYU-Idaho</footer>
