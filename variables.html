@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="css/vehicle registratin.css">
     <script>
         function getTotalDue() {
-            const rDiscount = document.getElementById('rDiscount').value;
             const totalAmountDue = 100;
-
+            const rDiscount = document.getElementById('rDiscount').value;
             let totalDue = 0;
             totalDue = totalAmountDue - rDiscount;
             document.getElementById("totalDue").innerHTML = `Total: $${totalDue} Amount Due`;
