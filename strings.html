@@ -31,19 +31,16 @@
 
 function buildText() {
     // INPUT
-    let firstnameOne = document.getElementById('firstname');
-    let fruitOne = document.getElementById('fruit');
-    let animalOne = document.getElementById('animal1');
-    let animalTwo = document.getElementById('animal2');
-    // PROCESSING
+    let firstnameOne = document.getElementById('firstname').value;
+    let fruitOne = document.getElementById('fruit').value;
+    let animalOne = document.getElementById('animal1').value;
+    let animalTwo = document.getElementById('animal2').value;
+    // PROCESSING AND OUTPUT
     document.getElementById('output').innerHTML = (`And it came to pass that the people of ${firstnameOne} did till the land, and raise all manner of ${fruitOne}, and flocks of herds, and flocks of all manner of ${animalOne} of every kind, and ${animalTwo}.`);
-
-    //OUTPUT - Example output: "And it came to pass that the people of ___ did till the land, and raise all manner of ___, and flocks of herds, and flocks of all manner of ___ of every kind, and ___."
   
 }
 
     </script>
 </body>
 </html>
-output = "And it came to pass that the people of " +"firstnameOne " + "did till the land, and raise all manner of " + "fruitOne " + ", and flocks of herds, and flocks of all manner of " + "animalOne " + "of every kind, and" + "animalTwo" +".";
   
