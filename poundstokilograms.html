@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/poundstokilograms.css">
+</head>
+<body>
+    <header>
+        <h1>Pounds to Kilograms Converter</h1>
+        <h2>McKay Thomas</h2>
+    </header>
+    <main>
+        <h3>Pounds</h3>
+        <label class="pounds">Weight in Pounds: <input type="number" id="lbs" placeholder="LBs"></label>
+        <div class="output"><button onclick="convertPounds()">Convert to KG</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; McKay Thomas &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function convertPounds() {
+        //INPUT get pounds from user input
+        let pounds = document.getElementById('lbs').value;
+        //PROCESSING devide pounds by 2.2 to get kg
+        let kg = pounds/2.2046;
+        //OUTPUT display final amount of kg
+        document.getElementById('output').innerHTML= `${pounds} lbs = ${kg.toFixed(1)} kg.`
+        }
+    </script>
+</body>
+</html>
