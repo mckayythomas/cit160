@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Employee Wage Calculator</h1>
+        <h2> MCKAY THOMAS</h2>
+    </header>
+    <main>
+        <h3>Weekly Hours</h3>
+        <label class="normalHours">Total Normal Hours Worked:<input type="number" id="normalHours"></label>
+        <label class="overTimeHours">Total Overtime Hours Worked:<input type="number" id="overTimeHours"></label>
+        <div class="output"><button onclick="getWages()">Calculate Earnings</button>
+        </div>
+        <p id="final"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; McKay Thomas &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function getWages() {
+            //INPUT get total hours worked from user and declare tax rate.
+            let hours = document.getElementById('normalHours').value;
+            let overtimeHours = document.getElementById('overTimeHours').value;
+            //Processing: Add total hours and mutiply by wage for each type. (overtime = $22.50). Calculate tax as well from total wages. 
+            let overtimeWage = overtimeHours * 22.50;
+            let hourlyWage= hours * 15;
+            let totalWage = hourlyWage + overtimeWage;
+            let taxedWage = totalWage - .15*totalWage;
+            // OUTPUT: give total wages earned for the week. 
+            document.getElementById('final').innerHTML= `Take home wages after tax = $${taxedWage.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>
