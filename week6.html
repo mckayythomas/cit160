@@ -11,7 +11,7 @@
     <h1> Calculator</h1>
     <span id="num1"></span>
    <select id ="operand">
-    <option value="" selected dsabled>--Select An Operand--</option>
+    <option value="" selected disabled>--Select An Operand--</option>
    <option value ="+">+ Addition</option>
    <option value ="-">- Subtraction</option>
    </select>
@@ -42,7 +42,7 @@ if (operand === "+") {
 // determine message
     if (answerKey === userAnswer) {
         message = `Correct 🏆`} else {
-          message = `Incorrect 😢`}
+          message = `Incorrect 😢`};
 
 //output- Post message to user
 document.querySelector('#message').textContent = message;

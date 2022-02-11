@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather Shoes Selector</h1>
+    <h2>McKay Thomas</h2>
+    <hr>
+    <select id="weather">
+        <option value="" selected disabled>--Todays Weather--</option>
+        <option value="rainy">Rainy</option>
+        <option value="snow">Snow</option>
+        <option value="hot">Hot</option> 
+    </select>
+    <button onclick="shoeSelector()">Which Shoes Should I Wear?</button>
+    <hr>
+    <p id="message"></p>
+    <script>
+        function shoeSelector() {
+           // INPUT - Get weather option
+            let weather = document.querySelector('#weather').value;
+            // PROCESSING - Matching weather to best shoe option. 
+            switch (weather) {
+                case "rainy":
+                    message = `Wear Galoshas`;
+                    break;
+                case "snow": 
+                message = `Wear Boots`;
+                break;
+                case "hot": 
+                message = `Wear Sandals`;
+                break;
+                default: message= "";
+            }
+            //OUTPUT - output message
+            document.querySelector('#message').textContent = message;
+                }
+    </script>
+</body>
+</html>
