@@ -4,6 +4,7 @@ body {font-family: 'Lato', Arial, sans-serif;
     flex-direction: column;
     align-items: center;
     justify-content: center;}
+    header {text-align: center;}
     header, main, footer {margin: .5rem auto;border: 1px solid rgba(0,0,0,.1);
     padding: 1rem; width: 500px;}
     header, footer {background-color: #001a66;color: #ffffff;}
