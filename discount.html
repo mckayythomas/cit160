@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+    <link rel="stylesheet" href="css/discount.css">
+</head>
+<body>
+    <header>
+        <h1>Discount Calculator</h1>
+        <h2>McKay Thomas</h2>
+    </header>
+    <main>
+        <h3>Total Price</h3>
+    <hr>
+        <label class="subtotal">Subtotal: $ <input type="number" id="priceTotal"></label>
+    <br>
+        <label><button onclick= "getPrice()">Get Total</button></label>
+
+        <hr/>
+        <p id="discount"></p>
+        </main>
+</body>
+<footer>
+    &copy;2021 &bull; McKay  Thomas &bull; BYU-Idaho &bull; CIT 160
+</footer>
+<script> 
+    function getPrice() {
+     //INPUT
+        let now = new Date();
+        const theDay = now.getDay();
+        let subtotal = parseFloat(document.querySelector('#priceTotal').value);
+     //PROCESSING
+        if ( subtotal > 50 && theDay === 2 || theDay === 3 ){
+          subtotal = subtotal - (subtotal* .1) + (subtotal* .06);
+        } else {
+            subtotal = subtotal + (subtotal*.06);
+        }
+ 
+     //OUTPUT
+        document.querySelector('#discount').textContent = `Total due including available discounts and tax $${subtotal}`
+    }
+</script>
+</html>
