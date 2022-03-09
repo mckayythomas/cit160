@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Loops</title>
+</head>
+
+<body>
+  <h2>Fixed Loops</h2>
+  <h3>McKay Thomas</h3>
+  <hr>
+  <button onclick="fixedLoops1()">Fixed loops 1</button>
+  <div id="display1"></div>
+  <hr><br>
+
+  <button onclick="fixedLoops2()">Fixed Loops 2</button>
+  <div id="display2"></div>
+  <hr><br>
+
+  <button onclick="fixedLoops3()">Fixed Loops 3</button>
+  <div id="display3"></div>
+  <hr><br>
+
+  <button onclick="fixedLoops4()">Fixed Loops 4</button>
+  <div id="display4"></div>
+  <hr><br>
+
+  <script>
+    function fixedLoops1() {
+      let output1 = '';
+      let i = 0;
+      while (i < 2) {
+        output1 += `Part 1:${i}<br>`;
+        i++;
+      }
+      document.getElementById('display1').innerHTML = output1;
+    }
+
+    function fixedLoops2() {
+      var output2 = '';
+      for (let j = 0; j < 3; j++) {
+        if (j !== 2) {
+          output2 += `Part 2:${j}, `;
+        }
+        else {
+          output2 += `Part 2:${j}`;
+        }
+      }
+      document.getElementById('display2').textContent = output2;
+    }
+
+    function fixedLoops3() {
+      let output3 = '';
+      for (let k = 0; k < 4; k++) {
+        output3 += k + " ";
+      }
+      document.getElementById('display3').textContent = output3;
+
+    }
+
+    function fixedLoops4() {
+      let balance = 1000;
+      const rate = .10;
+      let n = 30;
+      for (let s = 0; s < n; s++) {
+        interest = balance * rate;
+      balance += interest;
+      }
+      document.getElementById('display4').textContent = balance.toFixed(2);
+    }
+  </script>
+</body>
+
+</html>

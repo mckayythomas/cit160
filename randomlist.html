@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Lists</title>
+</head>
+<body>
+    <button onclick='makeList()'>Make List</button>
+    <div id="list"></div>
+    <script>
+        function makeList() {
+            let display = "";
+            let n = Math.random() * (51-1) + 1; 
+            while (n <= 51) {
+                display += `item: ${Math.floor(n)} <br>`;
+                n++;
+
+            }
+            document.getElementById('list').innerHTML = display
+        }
+    </script>
+</body>
+</html>
