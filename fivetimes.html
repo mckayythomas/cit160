@@ -9,16 +9,17 @@
 <body>
 
     <button onclick = "fiveTimes()">Display Table</button>
-    <div id="display"></div>
+    <div id="outcome"></div>
 </body>
 <script>
     function fiveTimes() {
-        
+       let display = "";
         let i = 1;
         while (i <= 12) {
-            let display = 5 * i++;
+            display = 5 * i;
+            i++;
         }
-        document.getElementById("display").innerHTML = display
+        document.getElementById("outcome").innerHTML = display
     }
 </script>
 </html>
