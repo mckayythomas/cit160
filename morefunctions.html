@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Functions</title>
+</head>
+<body>
+    <h1>More Functions</h1>
+    <h2>McKay Thomas</h2>
+
+    <label>Investment amount: </label>
+    <input type="number" id="amount">
+    <label>Growth rate Per period:</label>
+    <input type="number" id="rate">
+    <label>Total years of investment: </label>
+    <input type="number" id="years">
+    <label>Number of periods per year: </label>
+    <input type="number" id="life">
+    <button onclick="doFV()">Compute </button>
+    <div id="output"></div>
+
+
+    
+</body>
+<script>
+    function doFV() {
+        let principal = parseFloat(document.querySelector("#amount").value);
+        let annualRate = parseFloat(document.querySelector("#rate").value);
+        let years = parseFloat(document.querySelector("#years").value);
+        let periodsPerYear = parseFloat(document.querySelector("#life").value);
+        let FV = computeFutureValue(principal, annualRate, years, periodsPerYear);
+        document.querySelector("#output").innerHTML = `The Principle investment over ${years} years with monthly accruements at ${annualRate}% annual investment is $${FV}.`
+    }
+
+    function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+        f = principal*(1+annualRate/periodsPerYear)**(years*periodsPerYear);
+        return f
+    }
+</script>
+</html>
