@@ -11,13 +11,13 @@
     <h2>McKay Thomas</h2>
 
     <label>Investment amount: </label>
-    <input type="number" id="amount">
+    <input type="number" id="amount"><br>
     <label>Growth rate Per period:</label>
-    <input type="number" id="rate">
+    <input type="number" id="rate"><br>
     <label>Total years of investment: </label>
-    <input type="number" id="years">
+    <input type="number" id="years"><br>
     <label>Number of periods per year: </label>
-    <input type="number" id="life">
+    <input type="number" id="life"><br>
     <button onclick="doFV()">Compute </button>
     <div id="output"></div>
 
@@ -31,7 +31,7 @@
         let years = parseFloat(document.querySelector("#years").value);
         let periodsPerYear = parseFloat(document.querySelector("#life").value);
         let FV = computeFutureValue(principal, annualRate, years, periodsPerYear);
-        document.querySelector("#output").innerHTML = `The Principle investment over ${years} years with monthly accruements at ${annualRate}% annual investment is $${FV}.`
+        document.querySelector("#output").innerHTML = `The Principle investment over ${years} years with monthly accruements at ${annualRate}% annual investment is $${FV.toFixed(2)}.`
     }
 
     function computeFutureValue(principal, annualRate, years, periodsPerYear) {
