@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+</head>
+<body>
+  <p>Please enter two numbers:</p>
+  <input type="number" id="one" size="5"><br>
+  <input type="number" id="two" size="5">
+  <button type="button" onclick="sums()">Click</button>
+  <div id="output"></div>
+
+  <script>
+      function sums() {
+    /* Input:
+     * Processing:
+     * Output:
+     */
+    let one = parseInt(document.getElementById("one").value);
+    let two = parseInt(document.getElementById("two").value);
+    let sum = one + two;
+        let answer = "";
+    if ((one > 5 && two > 5) || sum >=20) {
+         answer = "True";
+    }
+    else {
+         answer = "False";
+    }
+    document.getElementById("output").innerHTML = answer
+}
+  </script>
+</body>
+</html>

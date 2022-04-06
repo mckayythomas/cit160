@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <p>Please enter three numbers:</p>
+        <h3>Start:</h3>
+        <input type="number" id="one" size="5"><br>
+        <h3>End:</h3>
+        <input type="number" id="two" size="5"><br>
+        <h3>Divisor:</h3>
+        <input type="number" id="three" size="5">
+        <button type="button" onclick="divisor()">Click</button>
+        <div id="result"></div>
+
+        <script>
+            function divisor() {
+                let start = parseInt(document.getElementById("one").value);
+                let end = parseInt(document.getElementById("two").value);
+                let divide = parseInt(document.getElementById("three").value);
+                let output = "";
+                
+                for (i = start; i<=end; i++) {
+                    if (i % divide == 0) {
+                        output += `${i} `;
+                    }
+                }
+                
+                document.getElementById("result").innerHTML = output;
+    
+            }
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Disocunt Functions</h1>
+    <label for="subtotal"><input type="text" id="subtotal"> </label>
+    <select for="state" id="state">Virginia (8%), Ohio (7%) and Nevada (5%).
+        <option value="" selected disabled>Choose the state ...</option>
+        <option value=".08">Virginia</option>
+        <option value=".07">Ohio</option>
+        <option value=".05">Nevada</option>
+    </select>
+    <button onclick="processTotal()">Process Total </button>
+    <div id="total"></div>
+</body>
+<script>
+
+    function processTotal () {
+        let total = 0;
+        
+        let subtotal = parseFloat(document.querySelector('#subtotal').value);
+        let stateTax = parseFloat(document.querySelector('#state').value)
+
+        let discount = dayDiscount();
+        total = subtotal * (1 - discount);
+
+        let aDiscount = amountDiscount(subtotal);
+        total = total - subtotal * aDiscount;
+
+        total = total + total * stateTax;
+
+        document.querySelector('#total').innerHTML = `Total Amount Due: $${total.toFixed(2)}`;
+
+
+    }
+
+    function dayDiscount() {
+        let d = new Date();
+        let discount = 0;
+        let dayOfWeek = d.getDay();
+        switch (dayOfWeek) {
+            case 1:
+                discount = .10;
+                break;
+            case 2:
+                discount = .15;
+                break;
+            case 3:
+                discount = .20;
+                break;
+            case 4:
+                discount = .15;
+                break;
+            case 5:
+                discount = .05;
+                break;
+
+        }
+        return discount
+    }
+
+    function amountDiscount(subtotal) {
+        let aDiscount = 0;
+        if ( subtotal > 100) {
+            aDiscount = .10;
+        }
+        return aDiscount
+    }
+
+    
+</script>
+</html>
