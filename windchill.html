@@ -15,7 +15,9 @@
     <input typer="number" id="wind">
     
     <button onclick="doInputOutput()">Compute wind chill</button>
-
+<button onclick="windChill()">test</button>
+<br><hr>
+<div id="output"></div>
 
 
 
@@ -23,15 +25,19 @@
 </body>
 <script>
     function doInputOutput () {
-        let windChill = 0;
         let temp = parseFloat(document.querySelector("#temp").value);
         let wind = parseFloat(document.querySelector("#wind").value);
-
+        let windchill = windChill(temp, wind);
+        document.querySelector("#output").innerHTML = `Wind Chill factor is: ${windchill.toFixed(2)} F.`;
 
     }
 
-    function windChill() {
-        let 
+    function windChill(temp, wind) {
+        let chill = 0;
+        if (temp < 50 && wind > 3) {
+            chill = 35.74 + 0.6215 * temp - 35.75 * (wind**.16) + 0.4275 * temp * (wind**.16);
+        }
+        return chill
     }
 </script>
 </html>
